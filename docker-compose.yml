@@ -1,0 +1,14 @@
+debian-jupyter:
+  #build: .
+  image: "debian-jupyter:latest"
+  ports:
+    - "8888:8888"
+  container_name: debian-jupyter
+  tty: true
+  stdin_open: true
+  environment:
+    ENV: DEV
+  volumes:
+    - ~/notebook:/jupyter/notebook
+    - ./conf:/jupyter/conf
+
